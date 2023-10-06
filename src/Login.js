@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
@@ -11,15 +10,11 @@ const Login = ({ route, navigation }) => {
   const { onLogin } = route.params;
 
   const handleLogin = () => {
-
     const correctUsername = 'user';
     const correctPassword = 'password';
 
     if (username === correctUsername && password === correctPassword) {
-     
       onLogin();
-      
-  
       navigation.navigate('PhraseBox');
     } else {
       setError('Incorrect username or password. Please try again.');
@@ -52,23 +47,31 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#F5F5F5', // Light gray background
+    alignItems: 'center', // Center items horizontally
+    justifyContent: 'center', // Center items vertically
   },
   header: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: '#333', // Dark gray text color
   },
   input: {
-    height: 40,
-    borderColor: 'gray',
+    width: '100%', // Full width
+    height: 50,
+    borderColor: '#DADADA', // Light gray border color
     borderWidth: 1,
     marginBottom: 20,
-    padding: 10,
+    paddingLeft: 15,
+    fontSize: 18,
+    backgroundColor: 'white',
+    borderRadius: 5,
   },
   errorText: {
     color: 'red',
     marginBottom: 10,
+    fontSize: 16,
   },
 });
 
