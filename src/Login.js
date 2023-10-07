@@ -1,4 +1,6 @@
 
+
+
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
@@ -15,7 +17,7 @@ const Login = ({ route, navigation }) => {
 
     if (username === correctUsername && password === correctPassword) {
       onLogin();
-      navigation.navigate('PhraseBox');
+      navigation.navigate('Home');
     } else {
       setError('Incorrect username or password. Please try again.');
     }
@@ -39,6 +41,9 @@ const Login = ({ route, navigation }) => {
       />
       {error ? <Text style={styles.errorText}>{error}</Text> : null}
       <Button title="Login" onPress={handleLogin} />
+      <Text style={styles.signupLink} onPress={() => navigation.navigate('Signup')}>
+        Don't have an account? Signup
+      </Text>
     </View>
   );
 };
@@ -73,6 +78,16 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontSize: 16,
   },
+  signupLink: {
+    color: 'blue',
+    textDecorationLine: 'underline',
+    alignSelf: 'center',
+    marginTop: 10,
+  },
 });
 
+  
+
 export default Login;
+
+
