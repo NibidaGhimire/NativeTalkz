@@ -1,0 +1,4 @@
+.expo/
+.venv/
+.vscode/
+node_modules/
